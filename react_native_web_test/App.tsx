@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Bar} from 'react-native-progress';
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -13,6 +14,18 @@ const App = () => {
       </TouchableOpacity>
 
       <Text>You clicked {count} times!</Text>
+
+      <Text style={styles.progressBar}>Our ProgressBar!</Text>
+
+      <Bar
+        borderWidth={6}
+        width={240}
+        borderColor={'yellow'}
+        color={'blue'}
+        unfilledColor={'green'}
+        progress={0}
+        useNativeDriver
+      />
     </View>
   );
 };
@@ -32,6 +45,9 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 40,
+  },
+  progressBar: {
+    marginTop: 20,
   },
 });
 

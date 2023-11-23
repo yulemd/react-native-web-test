@@ -20,6 +20,7 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, 'index.web.js'), // Entry to your application
     path.resolve(__dirname, 'App.tsx'), // Change this to your main App file
     path.resolve(__dirname, 'src'),
+    path.resolve(appDirectory, 'rizna-components'),
     ...compileNodeModules,
   ],
   use: {

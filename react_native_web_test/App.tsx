@@ -1,32 +1,45 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {Bar} from 'react-native-progress';
+
+import {ProgressBar as RiznaProgressBar} from './rizna-components/ProgressBar';
+import {ProgressBar} from './src/components/ProgressBar';
 
 const App = () => {
   const [count, setCount] = useState(0);
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Hello from {'\n'}React Native Web!</Text>
-      <TouchableOpacity
-        onPress={() => setCount(count + 1)}
-        style={styles.button}>
-        <Text>Click me!</Text>
-      </TouchableOpacity>
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.title}>Hello from {'\n'}React Native Web!</Text>
+        <TouchableOpacity
+          onPress={() => setCount(count + 1)}
+          style={styles.button}>
+          <Text>Click me!</Text>
+        </TouchableOpacity>
 
-      <Text>You clicked {count} times!</Text>
+        <Text>You clicked {count} times!</Text>
 
-      <Text style={styles.progressBar}>Our ProgressBar!</Text>
+        <Text style={styles.progressBar}>Our ProgressBar!</Text>
 
-      <Bar
-        borderWidth={6}
-        width={240}
-        borderColor={'yellow'}
-        color={'blue'}
-        unfilledColor={'green'}
-        progress={0}
-        useNativeDriver
-      />
-    </View>
+        <Bar
+          borderWidth={6}
+          width={240}
+          borderColor={'yellow'}
+          color={'blue'}
+          unfilledColor={'green'}
+          progress={0}
+          useNativeDriver
+        />
+        <ProgressBar />
+        <RiznaProgressBar />
+      </View>
+    </SafeAreaView>
   );
 };
 
